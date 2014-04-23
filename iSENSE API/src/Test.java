@@ -56,7 +56,7 @@ public class Test {
 			ArrayList<RProjectField> rpfs = new ArrayList<RProjectField>();
 			rpfs.add(rpf);
 			int pid = api.createProject("Automated Test " + new Date(), rpfs);
-			assertNotNull(api.getProject(pid));
+			assertNotEquals(pid, -1);
 			
 			JSONObject data = new JSONObject();
 			long fieldId = api.getProjectFields(pid).get(0).field_id;
